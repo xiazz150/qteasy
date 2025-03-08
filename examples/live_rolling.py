@@ -10,7 +10,12 @@
 # 交易策略略，同时监控多只ETF基
 # 金，轮动持有20日涨幅最大的两只。
 # ======================================
-
+# ======================================
+# 1. 创建账户
+# qt.trade_recording.new_account(user_name="Grit",cash_amount=20000)
+# 2. 运行此模型需要添加指定参数
+# python live_rolling.py  -h   # 查看预先设定参数
+# ======================================
 
 import os
 import sys
@@ -56,7 +61,7 @@ if __name__ == '__main__':
     qt.configure(
             mode=0,
             time_zone='Asia/Shanghai',
-            asset_type='FD',
+            asset_type='E',
             asset_pool=asset_pool,
             benchmark_asset='000300.SH',
             trade_batch_size=0.1,  # 基金交易允许0.1份
